@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vixen's World | Book Your Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Link for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">Vixen</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#booking" class="nav-link">Book Now</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Vixen's World</h1>
+            <p>Curated experiences for the discerning gentleman. Let's create unforgettable moments together.</p>
+            <a href="#booking" class="cta-button">Book Your Time</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>My Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-coffee"></i>
+                <h3>Coffee & Conversation</h3>
+                <p>A relaxed and engaging meeting to get to know each other. Perfect for a first connection.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-handshake"></i>
+                <h3>Meet & Greet</h3>
+                <p>Ideal for events, galas, or a stylish evening out. I'll be your charming companion.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-video"></i>
+                <h3>Private Collaboration</h3>
+                <p>An exclusive, private session tailored to your specific interests and desires.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-plane"></i>
+                <h3>Fly Me To You</h3>
+                <p>Ready for an adventure? Book me for holidays, trips, or extended getaways.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking">
+        <h2>Book Your Experience</h2>
+        <p>Please fill out the form below to request a booking. I will personally confirm your appointment via email.</p>
+        
+        <form id="booking-form" class="booking-form" action="https://formspree.io/f/your-form-id-here" method="POST">
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="service">Desired Service:</label>
+                <select id="service" name="service" required>
+                    <option value="">--Please choose an option--</option>
+                    <option value="coffee">Coffee & Conversation</option>
+                    <option value="meet">Meet & Greet</option>
+                    <option value="collab">Private Collaboration</option>
+                    <option value="flyme">Fly Me To You</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date">Preferred Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="time">Preferred Time:</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+            <div class="form-group">
+                <label for="duration">Duration (for Collab/Fly Me):</label>
+                <input type="text" id="duration" name="duration" placeholder="e.g., 2 hours, 3 days">
+            </div>
+            <div class="form-group full-width">
+                <label for="message">Special Requests / Details:</label>
+                <textarea id="message" name="message" rows="5"></textarea>
+            </div>
+            <button type="submit" class="submit-button">Submit Booking Request</button>
+        </form>
+        <div id="form-status"></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Get in Touch</h2>
+        <p>For all other inquiries, please don't hesitate to reach out.</p>
+        <div class="contact-info">
+            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:vixen@example.com">vixen@example.com</a></p>
+            <!-- Social Media Links can be added here -->
+            <!-- <p><i class="fab fa-instagram"></i> Instagram: <a href="#">@VixensWorld</a></p> -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span id="year"></span> Vixen's World. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
