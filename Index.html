@@ -33,26 +33,30 @@
 
     <!-- Services Section -->
     <section id="services" class="services">
-        <h2>My Services</h2>
+        <h2>My Services & Rates</h2>
         <div class="services-grid">
             <div class="service-card">
                 <i class="fas fa-coffee"></i>
                 <h3>Coffee & Conversation</h3>
+                <div class="service-price">70 USDT / hour</div>
                 <p>A relaxed and engaging meeting to get to know each other. Perfect for a first connection.</p>
             </div>
             <div class="service-card">
                 <i class="fas fa-handshake"></i>
                 <h3>Meet & Greet</h3>
+                <div class="service-price">150 USDT / event</div>
                 <p>Ideal for events, galas, or a stylish evening out. I'll be your charming companion.</p>
             </div>
             <div class="service-card">
                 <i class="fas fa-video"></i>
                 <h3>Private Collaboration</h3>
+                <div class="service-price">150 USDT / 2 hours</div>
                 <p>An exclusive, private session tailored to your specific interests and desires.</p>
             </div>
             <div class="service-card">
                 <i class="fas fa-plane"></i>
                 <h3>Fly Me To You</h3>
+                <div class="service-price">2000 USDT / experience</div>
                 <p>Ready for an adventure? Book me for holidays, trips, or extended getaways.</p>
             </div>
         </div>
@@ -63,9 +67,10 @@
         <h2>Book Your Experience</h2>
         <p>Please fill out the form below to request a booking. I will personally confirm your appointment via email.</p>
         
-        <form class="booking-form" action="https://formsubmit.co/prodomimatrix2@gmail.com" method="POST">
-    <input type="hidden" name="_subject" value="New Booking Request from Vixen's Site">
-    <input type="hidden" name="_template" value="table">
+        <form class="booking-form" action="https://formsubmit.co/predominatrix2@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New Booking Request!">
+            <input type="hidden" name="_captcha" value="false">
+            
             <div class="form-group">
                 <label for="name">Your Name:</label>
                 <input type="text" id="name" name="name" required>
@@ -92,10 +97,38 @@
                 <label for="time">Preferred Time:</label>
                 <input type="time" id="time" name="time" required>
             </div>
-            <div class="form-group">
-                <label for="duration">Duration (for Collab/Fly Me):</label>
-                <input type="text" id="duration" name="duration" placeholder="e.g., 2 hours, 3 days">
+            
+            <!-- USDT Payment Section -->
+            <div class="form-group payment-section">
+                <h3><i class="fas fa-coins"></i> USDT Payment</h3>
+                
+                <div class="payment-instructions">
+                    <p><strong>Full payment required via USDT to confirm booking:</strong></p>
+                </div>
+                
+                <div class="payment-options">
+                    <div class="payment-option">
+                        <input type="radio" id="usdt-paid" name="payment_status" value="full_paid" required>
+                        <label for="usdt-paid">I have sent full USDT payment</label>
+                    </div>
+                </div>
+                
+                <div class="usdt-details">
+                    <p><strong>Send USDT to this address:</strong></p>
+                    <div class="crypto-address">
+                        <input type="text" value="0xc7959b038c27C19BE27b0dC2f94720C005f266F2" id="usdtAddress" readonly>
+                        <button type="button" onclick="copyUSDTAddress()">
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                    </div>
+                    <div class="network-info">
+                        <p><i class="fas fa-network-wired"></i> <strong>Network:</strong> TRC20 (Tron) - Recommended</p>
+                        <p><i class="fas fa-exclamation-circle"></i> <strong>Note:</strong> Send only USDT on TRC20 network</p>
+                        <p><i class="fas fa-shield-alt"></i> <strong>Booking Policy:</strong> Full payment required to confirm booking</p>
+                    </div>
+                </div>
             </div>
+
             <div class="form-group full-width">
                 <label for="message">Special Requests / Details:</label>
                 <textarea id="message" name="message" rows="5"></textarea>
@@ -110,9 +143,7 @@
         <h2>Get in Touch</h2>
         <p>For all other inquiries, please don't hesitate to reach out.</p>
         <div class="contact-info">
-            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:prodominatrix2@gmail.com">prodominatrix2@gmail.com</a></p>
-            <!-- Social Media Links can be added here -->
-            <!-- <p><i class="fab fa-instagram"></i> Instagram: <a href="#">@VixensWorld</a></p> -->
+            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:predominatrix2@gmail.com">predominatrix2@gmail.com</a></p>
         </div>
     </section>
 
