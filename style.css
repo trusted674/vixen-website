@@ -349,6 +349,15 @@ a {
     margin-right: 10px;
 }
 
+.contact-info a {
+    color: #0088cc;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #006699;
+}
+
 /* Footer */
 footer {
     background-color: #222;
@@ -357,7 +366,36 @@ footer {
     padding: 2rem;
 }
 
-/* Responsive Design */
+/* Telegram Float */
+.telegram-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.telegram-float a {
+    background: #0088cc;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(0, 136, 204, 0.3);
+    transition: transform 0.3s ease;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.telegram-float a:hover {
+    transform: scale(1.05);
+    background: #0077b3;
+    box-shadow: 0 6px 16px rgba(0, 136, 204, 0.4);
+}
+
+/* Mobile responsive */
 @media (max-width: 768px) {
     .nav-menu {
         flex-direction: column;
@@ -393,5 +431,15 @@ footer {
 
     .crypto-address button {
         width: 100%;
+    }
+
+    .telegram-float {
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .telegram-float a {
+        padding: 10px 16px;
+        font-size: 13px;
     }
 }
