@@ -40,7 +40,7 @@ a {
 .nav-logo {
     font-size: 1.8rem;
     font-weight: bold;
-    color: #d4af37; /* Gold accent */
+    color: #d4af37;
 }
 
 .nav-menu {
@@ -70,7 +70,7 @@ a {
     justify-content: center;
     text-align: center;
     color: white;
-    padding-top: 70px; /* Offset for fixed nav */
+    padding-top: 70px;
 }
 
 .hero-content h1 {
@@ -143,6 +143,19 @@ a {
     font-size: 1.5rem;
 }
 
+/* Service Price Styles */
+.service-price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #26a17b;
+    margin: 0.8rem 0;
+    background: linear-gradient(135deg, #f0f9f5 0%, #e6f7f0 100%);
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: 2px solid #d1f0e4;
+    text-align: center;
+}
+
 /* Booking Section */
 .booking {
     padding: 100px 20px;
@@ -210,6 +223,109 @@ a {
     background-color: #b8941f;
 }
 
+/* USDT Payment Styles */
+.payment-section {
+    background: linear-gradient(135deg, #f0f9f5 0%, #e6f7f0 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 2px solid #26a17b;
+    margin: 2rem 0;
+}
+
+.payment-section h3 {
+    color: #26a17b;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.payment-instructions {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #26a17b;
+}
+
+.payment-options {
+    margin-bottom: 1.5rem;
+}
+
+.payment-option {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.payment-option input[type="radio"] {
+    margin-right: 15px;
+    transform: scale(1.2);
+}
+
+.usdt-details {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.crypto-address {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+    align-items: center;
+}
+
+.crypto-address input {
+    flex: 1;
+    background: #f8f9fa;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.crypto-address button {
+    background: #26a17b;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background 0.3s ease;
+}
+
+.crypto-address button:hover {
+    background: #1e8567;
+}
+
+.crypto-address button.copied {
+    background: #1e8567;
+}
+
+.network-info {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.network-info p {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 /* Contact Section */
 .contact {
     padding: 100px 20px;
@@ -270,3 +386,12 @@ footer {
     .services-grid {
         grid-template-columns: 1fr;
     }
+
+    .crypto-address {
+        flex-direction: column;
+    }
+
+    .crypto-address button {
+        width: 100%;
+    }
+}
