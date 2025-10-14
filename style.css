@@ -1,4 +1,4 @@
-/* Base Styles */
+/* Moody Mysterious Theme */
 * {
     margin: 0;
     padding: 0;
@@ -6,21 +6,22 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #fafafa;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.7;
+    color: #e0e0e0;
+    background: #0f0f1a;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(76, 0, 130, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(106, 13, 173, 0.1) 0%, transparent 50%),
+        linear-gradient(135deg, #0f0f1a 0%, #1a1030 50%, #0f0f1a 100%);
+    min-height: 100vh;
 }
 
 /* Navigation */
 .navbar {
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: rgba(15, 15, 26, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(109, 40, 217, 0.3);
     position: fixed;
     width: 100%;
     top: 0;
@@ -34,13 +35,14 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    height: 80px;
 }
 
 .nav-logo {
-    font-size: 1.8rem;
-    font-weight: bold;
+    font-size: 2rem;
+    font-weight: 600;
     color: #d4af37;
+    letter-spacing: 1px;
 }
 
 .nav-menu {
@@ -49,12 +51,14 @@ a {
 }
 
 .nav-item {
-    margin-left: 2rem;
+    margin-left: 2.5rem;
 }
 
 .nav-link {
     font-weight: 500;
-    transition: color 0.3s ease;
+    color: #e0e0e0;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
 }
 
 .nav-link:hover {
@@ -64,143 +68,248 @@ a {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/random/1920x1080/?luxury,interior') no-repeat center center/cover;
+    background: 
+        linear-gradient(135deg, rgba(15, 15, 26, 0.9) 0%, rgba(45, 27, 105, 0.8) 100%),
+        url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070') 
+        no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: white;
-    padding-top: 70px;
+    color: #f0f0f0;
+    padding-top: 80px;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(109, 40, 217, 0.1) 0%, transparent 50%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
+    font-size: 4rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .hero-content p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     max-width: 600px;
-    margin: 0 auto 2rem;
+    margin: 0 auto 3rem;
+    font-weight: 300;
+    opacity: 0.9;
+    letter-spacing: 0.5px;
 }
 
 .cta-button {
     display: inline-block;
-    background-color: #d4af37;
-    color: white;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 5px;
+    background: transparent;
+    color: #d4af37;
+    padding: 15px 40px;
+    border: 2px solid #d4af37;
+    border-radius: 2px;
     font-size: 1.1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
 }
 
 .cta-button:hover {
-    background-color: #b8941f;
+    background: #d4af37;
+    color: #0f0f1a;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
 }
 
 /* Services Section */
 .services {
-    padding: 100px 20px;
+    padding: 120px 20px;
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
+    position: relative;
+}
+
+.services::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
 }
 
 .services h2 {
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: #222;
+    font-size: 3.5rem;
+    font-weight: 300;
+    margin-bottom: 4rem;
+    color: #f0f0f0;
+    letter-spacing: 1px;
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
 }
 
 .service-card {
-    background: white;
-    padding: 2.5rem 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    background: rgba(30, 30, 46, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 3rem 2rem;
+    border-radius: 2px;
+    border: 1px solid rgba(109, 40, 217, 0.3);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(109, 40, 217, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.service-card:hover::before {
+    left: 100%;
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
+    border-color: #6d28d9;
+    box-shadow: 0 15px 40px rgba(109, 40, 217, 0.2);
 }
 
 .service-card i {
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: #d4af37;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
 }
 
 .service-card h3 {
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #f0f0f0;
 }
 
 /* Service Price Styles */
 .service-price {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #26a17b;
-    margin: 0.8rem 0;
-    background: linear-gradient(135deg, #f0f9f5 0%, #e6f7f0 100%);
-    padding: 0.8rem;
-    border-radius: 8px;
-    border: 2px solid #d1f0e4;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #d4af37;
+    margin: 1.5rem 0;
+    background: rgba(109, 40, 217, 0.1);
+    padding: 1rem;
+    border-radius: 2px;
+    border: 1px solid rgba(109, 40, 217, 0.3);
     text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.service-card p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #b0b0b0;
 }
 
 /* Booking Section */
 .booking {
-    padding: 100px 20px;
-    background-color: #f5f5f5;
+    padding: 120px 20px;
+    background: rgba(15, 15, 26, 0.8);
+    position: relative;
+}
+
+.booking::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #6d28d9, transparent);
 }
 
 .booking h2 {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 3.5rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    color: #f0f0f0;
 }
 
 .booking > p {
     text-align: center;
     max-width: 600px;
-    margin: 0 auto 3rem;
+    margin: 0 auto 4rem;
+    font-size: 1.2rem;
+    color: #b0b0b0;
 }
 
 .booking-form {
     max-width: 600px;
     margin: 0 auto;
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    background: rgba(30, 30, 46, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 3rem;
+    border-radius: 2px;
+    border: 1px solid rgba(109, 40, 217, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
     font-weight: 500;
+    color: #f0f0f0;
+    font-size: 1.1rem;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    padding: 12px 16px;
+    background: rgba(15, 15, 26, 0.8);
+    border: 1px solid rgba(109, 40, 217, 0.3);
+    border-radius: 2px;
     font-size: 1rem;
+    color: #e0e0e0;
+    font-family: 'Cormorant Garamond', serif;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #d4af37;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
 }
 
 .form-group.full-width {
@@ -209,190 +318,232 @@ a {
 
 .submit-button {
     width: 100%;
-    background-color: #d4af37;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
+    background: transparent;
+    color: #d4af37;
+    padding: 16px;
+    border: 2px solid #d4af37;
+    border-radius: 2px;
     font-size: 1.1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-family: 'Cormorant Garamond', serif;
 }
 
 .submit-button:hover {
-    background-color: #b8941f;
+    background: #d4af37;
+    color: #0f0f1a;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
 }
 
 /* USDT Payment Styles */
 .payment-section {
-    background: linear-gradient(135deg, #f0f9f5 0%, #e6f7f0 100%);
-    padding: 2rem;
-    border-radius: 15px;
-    border: 2px solid #26a17b;
-    margin: 2rem 0;
+    background: rgba(109, 40, 217, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border-radius: 2px;
+    border: 1px solid rgba(109, 40, 217, 0.3);
+    margin: 2.5rem 0;
 }
 
 .payment-section h3 {
-    color: #26a17b;
-    margin-bottom: 1rem;
+    color: #d4af37;
+    margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    font-size: 1.8rem;
+    font-weight: 500;
 }
 
 .payment-instructions {
-    background: white;
-    padding: 1rem;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-    border-left: 4px solid #26a17b;
+    background: rgba(15, 15, 26, 0.6);
+    padding: 1.5rem;
+    border-radius: 2px;
+    margin-bottom: 2rem;
+    border-left: 3px solid #6d28d9;
 }
 
 .payment-options {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .payment-option {
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
-    padding: 1rem;
-    background: white;
-    border-radius: 8px;
-    border: 1px solid #ddd;
+    padding: 1.5rem;
+    background: rgba(15, 15, 26, 0.6);
+    border-radius: 2px;
+    border: 1px solid rgba(109, 40, 217, 0.2);
+    transition: all 0.3s ease;
+}
+
+.payment-option:hover {
+    border-color: #6d28d9;
 }
 
 .payment-option input[type="radio"] {
     margin-right: 15px;
-    transform: scale(1.2);
+    transform: scale(1.3);
+    accent-color: #d4af37;
 }
 
 .usdt-details {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 10px;
-    border: 1px solid #ddd;
+    background: rgba(15, 15, 26, 0.6);
+    padding: 2rem;
+    border-radius: 2px;
+    border: 1px solid rgba(109, 40, 217, 0.3);
 }
 
 .crypto-address {
     display: flex;
-    gap: 10px;
-    margin: 15px 0;
+    gap: 12px;
+    margin: 1.5rem 0;
     align-items: center;
 }
 
 .crypto-address input {
     flex: 1;
-    background: #f8f9fa;
+    background: rgba(15, 15, 26, 0.8);
     font-family: 'Courier New', monospace;
     font-size: 0.9rem;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 14px;
+    border: 1px solid rgba(109, 40, 217, 0.3);
+    border-radius: 2px;
+    color: #e0e0e0;
 }
 
 .crypto-address button {
-    background: #26a17b;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 5px;
+    background: transparent;
+    color: #d4af37;
+    border: 2px solid #d4af37;
+    padding: 14px 24px;
+    border-radius: 2px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 5px;
-    transition: background 0.3s ease;
+    gap: 8px;
+    transition: all 0.3s ease;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
 }
 
 .crypto-address button:hover {
-    background: #1e8567;
+    background: #d4af37;
+    color: #0f0f1a;
 }
 
 .crypto-address button.copied {
-    background: #1e8567;
+    background: #d4af37;
+    color: #0f0f1a;
 }
 
 .network-info {
-    background: #f8f9fa;
-    padding: 1rem;
-    border-radius: 8px;
-    font-size: 0.9rem;
+    background: rgba(15, 15, 26, 0.8);
+    padding: 1.5rem;
+    border-radius: 2px;
+    font-size: 0.95rem;
+    border: 1px solid rgba(109, 40, 217, 0.2);
 }
 
 .network-info p {
-    margin: 5px 0;
+    margin: 8px 0;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
+    color: #b0b0b0;
 }
 
 /* Contact Section */
 .contact {
-    padding: 100px 20px;
+    padding: 120px 20px;
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
 }
 
 .contact h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 3.5rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    color: #f0f0f0;
 }
 
 .contact-info {
-    margin-top: 2rem;
-    font-size: 1.1rem;
+    margin-top: 3rem;
+    font-size: 1.2rem;
 }
 
 .contact-info i {
     color: #d4af37;
-    margin-right: 10px;
+    margin-right: 12px;
+    width: 20px;
 }
 
 .contact-info a {
-    color: #0088cc;
-    transition: color 0.3s ease;
+    color: #e0e0e0;
+    transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .contact-info a:hover {
-    color: #006699;
+    color: #d4af37;
 }
 
 /* Footer */
 footer {
-    background-color: #222;
-    color: white;
+    background: rgba(15, 15, 26, 0.95);
+    color: #b0b0b0;
     text-align: center;
-    padding: 2rem;
+    padding: 3rem;
+    border-top: 1px solid rgba(109, 40, 217, 0.3);
 }
 
 /* Telegram Float */
 .telegram-float {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 25px;
+    right: 25px;
     z-index: 1000;
 }
 
 .telegram-float a {
-    background: #0088cc;
+    background: rgba(109, 40, 217, 0.9);
+    backdrop-filter: blur(10px);
     color: white;
-    padding: 12px 20px;
-    border-radius: 50px;
+    padding: 14px 22px;
+    border-radius: 2px;
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 8px;
-    box-shadow: 0 4px 12px rgba(0, 136, 204, 0.3);
-    transition: transform 0.3s ease;
+    gap: 10px;
+    box-shadow: 0 8px 32px rgba(109, 40, 217, 0.3);
+    transition: all 0.3s ease;
     font-weight: 500;
     font-size: 14px;
+    border: 1px solid rgba(109, 40, 217, 0.5);
+    font-family: 'Cormorant Garamond', serif;
 }
 
 .telegram-float a:hover {
     transform: scale(1.05);
-    background: #0077b3;
-    box-shadow: 0 6px 16px rgba(0, 136, 204, 0.4);
+    background: rgba(109, 40, 217, 1);
+    box-shadow: 0 12px 40px rgba(109, 40, 217, 0.4);
 }
 
 /* Mobile responsive */
@@ -400,13 +551,15 @@ footer {
     .nav-menu {
         flex-direction: column;
         position: absolute;
-        top: 70px;
+        top: 80px;
         left: -100%;
-        background: white;
+        background: rgba(15, 15, 26, 0.95);
+        backdrop-filter: blur(10px);
         width: 100%;
         text-align: center;
         transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        border: 1px solid rgba(109, 40, 217, 0.3);
     }
 
     .nav-menu.active {
@@ -418,7 +571,7 @@ footer {
     }
 
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
     }
 
     .services-grid {
@@ -434,12 +587,18 @@ footer {
     }
 
     .telegram-float {
-        bottom: 15px;
-        right: 15px;
+        bottom: 20px;
+        right: 20px;
     }
     
     .telegram-float a {
-        padding: 10px 16px;
+        padding: 12px 18px;
         font-size: 13px;
+    }
+
+    .services h2,
+    .booking h2,
+    .contact h2 {
+        font-size: 2.8rem;
     }
 }
