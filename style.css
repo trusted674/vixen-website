@@ -457,6 +457,113 @@ body {
     color: #b0b0b0;
 }
 
+/* Buy USDT Section */
+.usdt-buy-section {
+    background: rgba(109, 40, 217, 0.08);
+    backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border-radius: 2px;
+    border: 1px solid rgba(109, 40, 217, 0.3);
+    margin: 2rem 0;
+}
+
+.usdt-buy-section h3 {
+    color: #d4af37;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.simple-swap-option {
+    background: rgba(15, 15, 26, 0.6);
+    padding: 2rem;
+    border-radius: 2px;
+    border: 1px solid rgba(109, 40, 217, 0.2);
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.simple-swap-option:hover {
+    border-color: #6d28d9;
+    transform: translateY(-2px);
+}
+
+.simple-swap-option h4 {
+    color: #d4af37;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.simple-swap-option p {
+    color: #b0b0b0;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.simple-swap-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #d4af37, #b8941f);
+    color: #0f0f1a;
+    padding: 12px 24px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.simple-swap-link:hover {
+    background: linear-gradient(135deg, #b8941f, #d4af37);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+}
+
+.usdt-guide {
+    background: rgba(15, 15, 26, 0.6);
+    padding: 1.5rem;
+    border-radius: 2px;
+    border: 1px solid rgba(109, 40, 217, 0.2);
+}
+
+.usdt-guide p {
+    color: #d4af37;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.usdt-guide ol {
+    color: #b0b0b0;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.usdt-guide li {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.usdt-guide .note {
+    background: rgba(212, 175, 55, 0.1);
+    padding: 1rem;
+    border-radius: 2px;
+    border-left: 3px solid #d4af37;
+    font-size: 0.95rem;
+    color: #d4af37;
+}
+
+.usdt-guide .note i {
+    margin-right: 8px;
+}
+
 /* Contact Section */
 .contact {
     padding: 120px 20px;
@@ -600,5 +707,10 @@ footer {
     .booking h2,
     .contact h2 {
         font-size: 2.8rem;
+    }
+
+    .simple-swap-link {
+        width: 100%;
+        justify-content: center;
     }
 }
