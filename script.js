@@ -1,33 +1,35 @@
 // Update Copyright Year
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Copy USDT Address Function
-function copyUSDTAddress() {
-    const usdtAddress = document.getElementById('usdtAddress');
+// Generic copy function for any address input
+function copyAddress(elementId) {
+    const input = document.getElementById(elementId);
+    if (!input) return;
     
-    if (usdtAddress) {
-        usdtAddress.select();
-        usdtAddress.setSelectionRange(0, 99999);
-        
-        navigator.clipboard.writeText(usdtAddress.value).then(function() {
-            const button = document.querySelector('.crypto-address button');
-            if (button) {
-                const originalText = button.innerHTML;
-                button.innerHTML = '<i class="fas fa-check"></i> Copied!';
-                button.style.background = '#1e8567';
-                button.classList.add('copied');
-                
-                setTimeout(() => {
-                    button.innerHTML = originalText;
-                    button.style.background = '';
-                    button.classList.remove('copied');
-                }, 2000);
-            }
-        }).catch(function(err) {
-            console.error('Failed to copy: ', err);
-            alert('Failed to copy address. Please select and copy manually.');
-        });
-    }
+    input.select();
+    input.setSelectionRange(0, 99999);
+    
+    navigator.clipboard.writeText(input.value).then(function() {
+        // Find the button that was clicked (next sibling)
+        const button = input.nextElementSibling;
+        if (button && button.tagName === 'BUTTON') {
+            const originalHTML = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+            button.style.background = '#1e8567';
+            setTimeout(() => {
+                button.innerHTML = originalHTML;
+                button.style.background = '';
+            }, 2000);
+        }
+    }).catch(function(err) {
+        console.error('Copy failed:', err);
+        alert('Failed to copy address. Please select and copy manually.');
+    });
+}
+
+// For backward compatibility with old copyUSDTAddress function
+function copyUSDTAddress() {
+    copyAddress('usdtAddress');
 }
 
 // Highlight active page in navigation
