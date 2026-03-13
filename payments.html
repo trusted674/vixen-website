@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vixen's World | Payment Methods</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Vixen</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="booking.html" class="nav-link">Book Now</a></li>
+                <li class="nav-item"><a href="payments.html" class="nav-link active">Payments</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="payment-page" style="padding: 120px 20px 60px; max-width: 1200px; margin: 0 auto;">
+        <h2 style="text-align: center; font-size: 3rem; color: #d4af37; margin-bottom: 2rem;">Payment Methods</h2>
+        <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 3rem;">Choose your preferred method. All crypto payments must be sent to the addresses below. After sending, please upload your proof of payment.</p>
+
+        <!-- Cryptocurrencies -->
+        <div class="crypto-payment-section" style="margin-bottom: 4rem;">
+            <h3 style="font-size: 2.2rem; color: #d4af37; margin-bottom: 2rem; border-bottom: 1px solid #6d28d9; padding-bottom: 0.5rem;">
+                <i class="fab fa-bitcoin"></i> Cryptocurrencies
+            </h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+                
+                <!-- Bitcoin -->
+                <div class="payment-card" style="background: rgba(15,15,26,0.7); border: 1px solid #6d28d9; border-radius: 15px; padding: 25px;">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                        <i class="fab fa-bitcoin" style="font-size: 2.5rem; color: #f7931a;"></i>
+                        <h4 style="font-size: 1.8rem;">Bitcoin (BTC)</h4>
+                    </div>
+                    <p><strong>Network:</strong> Bitcoin (BTC)</p>
+                    <div class="crypto-address" style="margin: 15px 0;">
+                        <input type="text" value="bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh" id="btcAddress" readonly>
+                        <button type="button" onclick="copyAddress('btcAddress')"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                    <p class="note" style="font-size: 0.9rem;"><i class="fas fa-exclamation-triangle"></i> Send only BTC to this address</p>
+                </div>
+
+                <!-- Ethereum -->
+                <div class="payment-card" style="background: rgba(15,15,26,0.7); border: 1px solid #6d28d9; border-radius: 15px; padding: 25px;">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                        <i class="fab fa-ethereum" style="font-size: 2.5rem; color: #627eea;"></i>
+                        <h4 style="font-size: 1.8rem;">Ethereum (ETH)</h4>
+                    </div>
+                    <p><strong>Network:</strong> ERC20</p>
+                    <div class="crypto-address" style="margin: 15px 0;">
+                        <input type="text" value="0x742d35Cc6634C0532925a3b844BcAc54e6a5f3E8" id="ethAddress" readonly>
+                        <button type="button" onclick="copyAddress('ethAddress')"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                    <p class="note" style="font-size: 0.9rem;"><i class="fas fa-exclamation-triangle"></i> Send only ETH (ERC20) to this address</p>
+                </div>
+
+                <!-- USDT -->
+                <div class="payment-card" style="background: rgba(15,15,26,0.7); border: 1px solid #6d28d9; border-radius: 15px; padding: 25px;">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                        <i class="fas fa-dollar-sign" style="font-size: 2.5rem; color: #26a17b;"></i>
+                        <h4 style="font-size: 1.8rem;">USDT (Tether)</h4>
+                    </div>
+                    <p><strong>Network:</strong> TRC20 (recommended) / ERC20</p>
+                    <div class="crypto-address" style="margin: 15px 0;">
+                        <input type="text" value="0xc7959b038c27C19BE27b0dC2f94720C005f266F2" id="usdtAddress" readonly>
+                        <button type="button" onclick="copyAddress('usdtAddress')"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                    <p class="note" style="font-size: 0.9rem;"><i class="fas fa-exclamation-triangle"></i> Send only USDT (TRC20) to this address</p>
+                </div>
+
+                <!-- Litecoin -->
+                <div class="payment-card" style="background: rgba(15,15,26,0.7); border: 1px solid #6d28d9; border-radius: 15px; padding: 25px;">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                        <i class="fas fa-coins" style="font-size: 2.5rem; color: #b8b8b8;"></i>
+                        <h4 style="font-size: 1.8rem;">Litecoin (LTC)</h4>
+                    </div>
+                    <p><strong>Network:</strong> Litecoin</p>
+                    <div class="crypto-address" style="margin: 15px 0;">
+                        <input type="text" value="ltc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh" id="ltcAddress" readonly>
+                        <button type="button" onclick="copyAddress('ltcAddress')"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                    <p class="note" style="font-size: 0.9rem;"><i class="fas fa-exclamation-triangle"></i> Send only LTC to this address</p>
+                </div>
+
+                <!-- Solana -->
+                <div class="payment-card" style="background: rgba(15,15,26,0.7); border: 1px solid #6d28d9; border-radius: 15px; padding: 25px;">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                        <i class="fas fa-sun" style="font-size: 2.5rem; color: #9945ff;"></i>
+                        <h4 style="font-size: 1.8rem;">Solana (SOL)</h4>
+                    </div>
+                    <p><strong>Network:</strong> Solana</p>
+                    <div class="crypto-address" style="margin: 15px 0;">
+                        <input type="text" value="SOL123456789abcdefghijk" id="solAddress" readonly>
+                        <button type="button" onclick="copyAddress('solAddress')"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                    <p class="note" style="font-size: 0.9rem;"><i class="fas fa-exclamation-triangle"></i> Send only SOL to this address</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fiat Currency Equivalents -->
+        <div style="margin: 4rem 0; padding: 30px; background: rgba(109, 40, 217, 0.1); border-radius: 15px;">
+            <h3 style="font-size: 2rem; color: #d4af37; margin-bottom: 1.5rem;">💰 Approximate Fiat Values</h3>
+            <p style="margin-bottom: 1.5rem;">All services are priced in <strong>USDT</strong>. Below are approximate conversions based on current market rates (1 USDT ≈ 1.00 USD, 0.92 EUR, 0.79 GBP). <em>Actual rates may vary.</em></p>
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid #d4af37;">
+                            <th style="padding: 12px; text-align: left;">Service</th>
+                            <th style="padding: 12px; text-align: left;">USDT</th>
+                            <th style="padding: 12px; text-align: left;">USD (approx)</th>
+                            <th style="padding: 12px; text-align: left;">EUR (approx)</th>
+                            <th style="padding: 12px; text-align: left;">GBP (approx)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style="padding: 10px;">Coffee & Conversation</td><td>70</td><td>$70</td><td>€64</td><td>£55</td></tr>
+                        <tr><td style="padding: 10px;">Video Call Sessions</td><td>80</td><td>$80</td><td>€74</td><td>£63</td></tr>
+                        <tr><td style="padding: 10px;">Meet & Greet</td><td>150</td><td>$150</td><td>€138</td><td>£119</td></tr>
+                        <tr><td style="padding: 10px;">Private Collaboration</td><td>150</td><td>$150</td><td>€138</td><td>£119</td></tr>
+                        <tr><td style="padding: 10px;">Online Sessions (monthly)</td><td>100</td><td>$100</td><td>€92</td><td>£79</td></tr>
+                        <tr><td style="padding: 10px;">Fly Me To You</td><td>2000</td><td>$2000</td><td>€1840</td><td>£1580</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- PayPal -->
+        <div style="margin: 4rem 0; padding: 30px; background: rgba(15,15,26,0.7); border: 1px solid #0070ba; border-radius: 15px;">
+            <h3 style="font-size: 2rem; color: #0070ba; margin-bottom: 1rem;"><i class="fab fa-paypal"></i> PayPal</h3>
+            <p style="margin-bottom: 1.5rem;">Prefer to use PayPal? Send the equivalent amount in your preferred currency to:</p>
+            <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
+                <a href="https://paypal.me/prodominatrix2" target="_blank" style="background: #0070ba; color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 600;"><i class="fab fa-paypal"></i> PayPal.Me/prodominatrix2</a>
+                <span style="color: #e0e0e0;">or email: <strong>prodominatrix2@gmail.com</strong></span>
+            </div>
+            <p class="note" style="margin-top: 15px;"><i class="fas fa-info-circle"></i> Please use "Friends & Family" or include a note with your username/booking reference.</p>
+        </div>
+
+        <!-- Proof of Payment Upload -->
+        <section class="proof-upload" style="margin-top: 4rem; padding: 30px; background: rgba(109, 40, 217, 0.1); border-radius: 15px;">
+            <h3 style="font-size: 2.2rem; color: #d4af37; margin-bottom: 1.5rem;"><i class="fas fa-upload"></i> Upload Proof of Payment</h3>
+            <p style="margin-bottom: 2rem;">After sending payment, complete this form to notify us. You will receive a confirmation email once verified.</p>
+
+            <form name="payment-proof" method="POST" data-netlify="true" enctype="multipart/form-data">
+                <input type="hidden" name="form-name" value="payment-proof" />
+                
+                <div class="form-group">
+                    <label>Your Full Name *</label>
+                    <input type="text" name="name" required />
+                </div>
+                
+                <div class="form-group">
+                    <label>Your Email *</label>
+                    <input type="email" name="email" required />
+                </div>
+                
+                <div class="form-group">
+                    <label>Payment Method Used *</label>
+                    <select name="payment-method" required>
+                        <option value="">-- Select method --</option>
+                        <optgroup label="Cryptocurrency">
+                            <option value="bitcoin">Bitcoin (BTC)</option>
+                            <option value="ethereum">Ethereum (ETH)</option>
+                            <option value="usdt">USDT (TRC20)</option>
+                            <option value="litecoin">Litecoin (LTC)</option>
+                            <option value="solana">Solana (SOL)</option>
+                        </optgroup>
+                        <optgroup label="Traditional">
+                            <option value="paypal">PayPal</option>
+                        </optgroup>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Transaction ID / Hash *</label>
+                    <input type="text" name="transaction-id" required />
+                    <small style="color: #aaa;">For crypto: transaction hash; For PayPal: transaction ID</small>
+                </div>
+                
+                <div class="form-group">
+                    <label>Amount Paid *</label>
+                    <input type="number" name="amount" step="0.01" required />
+                </div>
+                
+                <div class="form-group">
+                    <label>Upload Proof (Screenshot/PDF) *</label>
+                    <input type="file" name="proof" accept="image/*,.pdf" required />
+                    <small style="color: #aaa;">Max 5MB</small>
+                </div>
+                
+                <div class="form-group">
+                    <label>Additional Notes (Optional)</label>
+                    <textarea name="notes" rows="3"></textarea>
+                </div>
+                
+                <button type="submit" class="submit-button">Submit Proof of Payment</button>
+            </form>
+            <div id="form-status"></div>
+        </section>
+    </section>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Vixen's World. All rights reserved.</p>
+    </footer>
+
+    <div class="zangi-float">
+        <a href="https://services.zangi.com/dl/conversation/1086859612" target="_blank">
+            <i class="fas fa-mobile-alt"></i> Confidential Call
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
