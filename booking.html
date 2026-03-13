@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vixen's World | Book Now</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Vixen</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="booking.html" class="nav-link active">Book Now</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="booking" class="booking" style="padding-top: 100px;">
+        <h2>Book Your Experience</h2>
+        <p>Please fill out the form below to request a booking. I will personally confirm your appointment via email.</p>
+        
+        <form class="booking-form" action="https://formsubmit.co/prodominatrix2@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New Booking Request!">
+            <input type="hidden" name="_captcha" value="false">
+            
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="service">Desired Service:</label>
+                <select id="service" name="service" required>
+                    <option value="">--Please choose an option--</option>
+                    <option value="coffee">Coffee & Conversation</option>
+                    <option value="video">Video Call Sessions</option>
+                    <option value="meet">Meet & Greet</option>
+                    <option value="collab">Private Collaboration</option>
+                    <option value="online">Online Sessions (Monthly)</option>
+                    <option value="flyme">Fly Me To You</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date">Preferred Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="time">Preferred Time:</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+            
+            <!-- USDT Payment Section -->
+            <div class="form-group payment-section">
+                <h3><i class="fas fa-coins"></i> USDT Payment</h3>
+                
+                <div class="payment-instructions">
+                    <p><strong>Full payment required via USDT to confirm booking:</strong></p>
+                </div>
+                
+                <div class="payment-options">
+                    <div class="payment-option">
+                        <input type="radio" id="usdt-paid" name="payment_status" value="full_paid" required>
+                        <label for="usdt-paid">I have sent full USDT payment</label>
+                    </div>
+                </div>
+                
+                <div class="usdt-details">
+                    <p><strong>Send USDT to this address:</strong></p>
+                    <div class="crypto-address">
+                        <input type="text" value="0xc7959b038c27C19BE27b0dC2f94720C005f266F2" id="usdtAddress" readonly>
+                        <button type="button" onclick="copyUSDTAddress()">
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                    </div>
+                    <div class="network-info">
+                        <p><i class="fas fa-network-wired"></i> <strong>Network:</strong> TRC20 (Tron) - Recommended</p>
+                        <p><i class="fas fa-exclamation-circle"></i> <strong>Note:</strong> Send only USDT on TRC20 network</p>
+                        <p><i class="fas fa-shield-alt"></i> <strong>Booking Policy:</strong> Full payment required to confirm booking</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buy USDT Section -->
+            <div class="form-group usdt-buy-section">
+                <h3><i class="fas fa-shopping-cart"></i> Need USDT?</h3>
+                
+                <div class="simple-swap-option">
+                    <h4>SimpleSwap</h4>
+                    <p>Buy USDT instantly with credit card - no account needed, completely private</p>
+                    <a href="https://simpleswap.io/" target="_blank" class="simple-swap-link">
+                        <i class="fas fa-external-link-alt"></i> Buy USDT Instantly
+                    </a>
+                </div>
+                
+                <div class="usdt-guide">
+                    <p><strong>How to buy USDT:</strong></p>
+                    <ol>
+                        <li>Click "Buy USDT Instantly" above</li>
+                        <li>Select your currency (USD, EUR, etc.)</li>
+                        <li>Choose USDT as the cryptocurrency</li>
+                        <li>Enter the amount you need</li>
+                        <li>Follow the simple payment steps</li>
+                        <li>Send the USDT to my address above</li>
+                    </ol>
+                    <p class="note"><i class="fas fa-info-circle"></i> SimpleSwap doesn't require registration - perfect for privacy</p>
+                </div>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="message">Special Requests / Details:</label>
+                <textarea id="message" name="message" rows="5"></textarea>
+            </div>
+            <button type="submit" class="submit-button">Submit Booking Request</button>
+        </form>
+        <div id="form-status"></div>
+    </section>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Vixen's World. All rights reserved.</p>
+    </footer>
+
+    <div class="zangi-float">
+        <a href="https://services.zangi.com/dl/conversation/1086859612" target="_blank">
+            <i class="fas fa-mobile-alt"></i> Confidential Call
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
